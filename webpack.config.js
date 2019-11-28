@@ -2,23 +2,20 @@ const { join } = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: join(__dirname, 'app/renderer.jsx'),
+    entry: join(__dirname, 'app/renderer.tsx'),
     target: 'electron-renderer',
     output: {
         path: join(__dirname, 'app/build'),
         filename: 'renderer.js'
     },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js', '.jsx']
+    },
     module: {
         rules: [{
-            test: /.jsx?$/,
+            test:  /\.tsx?$/,
             exclude: /node_modules/,
-            use: [{
-                loader: 'babel-loader',
-                options: {
-                    presets: ['es2017', 'react'],
-                    plugins: ['transform-class-properties']
-                }
-            }]
+            use: 'ts-loader'
         }]
     }
 };
