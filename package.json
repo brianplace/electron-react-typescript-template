@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "./app/main.js",
   "scripts": {
-    "start": "npm run build && electron .",
+    "main": "tsc app/main.ts",
+    "start": "npm run main && npm run build && electron .",
     "dev": "webpack -d --watch",
     "build": "webpack --env production"
   },

@@ -1,33 +1,38 @@
-"use strict";
-exports.__esModule = true;
-var electron_1 = require("electron");
-var path = require("path");
-var url = require("url");
-var mainWindow;
+import { app, BrowserWindow } from 'electron';
+import * as path from 'path';
+import * as url from 'url';
+
+let mainWindow: BrowserWindow | null;
+
 function createWindow() {
-    mainWindow = new electron_1.BrowserWindow({
+    mainWindow = new BrowserWindow({
         width: 1000,
         height: 600,
         webPreferences: {
             nodeIntegration: true
         }
     });
+
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
         slashes: true
     }));
-    mainWindow.on('closed', function () {
+
+    mainWindow.on('closed', () => {
         mainWindow = null;
     });
 }
-electron_1.app.on('ready', createWindow);
-electron_1.app.on('window-all-closed', function () {
+
+app.on('ready', createWindow);
+
+app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        electron_1.app.quit();
+        app.quit();
     }
 });
-electron_1.app.on('activate', function () {
+
+app.on('activate', () => {
     if (mainWindow === null) {
         createWindow();
     }
