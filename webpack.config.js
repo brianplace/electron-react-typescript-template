@@ -5,7 +5,7 @@ module.exports = {
     entry: join(__dirname, 'app/renderer.tsx'),
     target: 'electron-renderer',
     output: {
-        path: join(__dirname, 'app/build'),
+        path: join(__dirname, 'app/'),
         filename: 'renderer.js'
     },
     resolve: {
