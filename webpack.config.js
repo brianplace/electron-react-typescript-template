@@ -1,12 +1,13 @@
-const { join } = require('path');
-const webpack = require('webpack');
+const path = require('path');
 
-module.exports = {
-    entry: join(__dirname, 'app/renderer.tsx'),
-    target: 'electron-renderer',
+try {
+
+const commonConfig = {
+    mode: 'production',
+    devtool: 'eval-source-map',
     output: {
-        path: join(__dirname, 'app/'),
-        filename: 'renderer.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js'
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx']
@@ -16,6 +17,26 @@ module.exports = {
             test:  /\.tsx?$/,
             exclude: /node_modules/,
             use: 'ts-loader'
+        }, {
+            enforce: 'pre',
+            test: /\.js$/,
+            loader: 'source-map-loader'
         }]
     }
 };
+
+module.exports = [
+    Object.assign({
+        target: 'electron-main',
+        entry: { main: './src/main.ts'}
+    }, commonConfig),
+    Object.assign({
+        target: 'electron-renderer',
+        entry: { renderer: './src/renderer.tsx'}
+    }, commonConfig)
+]
+}
+catch(e)
+{
+    console.log(e);
+}

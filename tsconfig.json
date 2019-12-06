@@ -1,15 +1,15 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "es6",
+        "module": "commonjs",
         "moduleResolution": "node",
         "lib": ["es6", "dom"],
         "sourceMap": true,
         "jsx": "react",
         "strict": true,
         "noImplicitReturns": true,
-        "rootDir": "app",
-        "outDir": "app/build"
+        "outDir": "./dist/"
     },
+    "include": ["./src/**/*"],
     "exclude": ["node_modules"]
 }

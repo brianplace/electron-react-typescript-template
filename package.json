@@ -1,10 +1,9 @@
 {
   "name": "electron-react-typescript-template",
   "version": "1.0.0",
-  "main": "./app/main.js",
+  "main": "./dist/main.js",
   "scripts": {
-    "main": "tsc app/main.ts",
-    "start": "npm run main && npm run build && electron .",
+    "start": "npm run build && electron .",
     "dev": "webpack -d --watch",
     "build": "webpack --env production"
   },
@@ -24,6 +23,7 @@
     "devtron": "^1.4.0",
     "electron": "^7.1.2",
     "electron-debug": "^1.1.0",
+    "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",

@@ -12,12 +12,9 @@ function createWindow() {
             nodeIntegration: true
         }
     });
-
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
+    
+    // mainWindow.loadURL(path.join('file://', __dirname, '../index.html'));
+    mainWindow.loadURL(`file://${path.join(__dirname, '../index.html')}`);
 
     mainWindow.on('closed', () => {
         mainWindow = null;
