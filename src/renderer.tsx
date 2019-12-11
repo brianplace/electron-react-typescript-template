@@ -7,4 +7,4 @@ ReactDOM.render((
     <div>
         <HelloWorld />
     </div>
-), document.querySelector('app'));
+), document.getElementById('root'));
