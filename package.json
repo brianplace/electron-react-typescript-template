@@ -5,30 +5,32 @@
   "scripts": {
     "start": "npm run build && electron .",
     "dev": "webpack -d --watch",
-    "build": "webpack --env production"
+    "build": "webpack --env production",
+    "initial-install": "npm install && ncu -u && npm update"
   },
   "dependencies": {
-    "prop-types": "^15.5.7",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.13",
+    "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-plugin-transform-class-properties": "^6.23.0",
-    "babel-preset-es2017": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "devtron": "^1.4.0",
-    "electron": "^7.1.2",
-    "electron-debug": "^1.1.0",
+    "electron": "^7.1.5",
+    "electron-debug": "^3.0.1",
+    "npm-check-updates": "^4.0.1",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.1.0",
-    "typescript": "^3.7.2",
+    "typescript": "^3.7.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }
