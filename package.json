@@ -6,7 +6,7 @@
     "start": "npm run build && electron .",
     "dev": "webpack -d --watch",
     "build": "webpack --env production",
-    "postinstall": "ncu -u && npm update"
+    "postinstall": "ncu -u && npm update && node packageCleanup.js"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
