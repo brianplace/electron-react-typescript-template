@@ -8,9 +8,9 @@
     "build": "webpack --env production",
     "postinstall": "ncu -u && npm update && node packageCleanup.js && npm install",
     "package": "npm run build-mac && npm run build-win && npm run build-linux",
-    "build-mac": "electron-packager . --platform=darwin --out=deployed-app --overwrite",
-    "build-win": "electron-packager . --platform=win32 --out=deployed-app --overwrite",
-    "build-linux": "electron-packager . --platform=linux --out=deployed-app --overwrite"  
+    "build-mac": "electron-packager . --platform=darwin --out=deployed-app --asar --overwrite",
+    "build-win": "electron-packager . --platform=win32 --out=deployed-app --asar --overwrite",
+    "build-linux": "electron-packager . --platform=linux --out=deployed-app --asar --overwrite"  
   },
   "dependencies": {
     "prop-types": "^15.7.2",
