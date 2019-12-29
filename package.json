@@ -6,7 +6,7 @@
     "start": "npm run build && electron .",
     "dev": "webpack -d --watch",
     "build": "webpack --env production",
-    "postinstall": "ncu -u && npm update && node packageCleanup.js",
+    "postinstall": "ncu -u && npm update && node packageCleanup.js && npm install",
     "package": "electron-packager . deployed-app"
   },
   "dependencies": {
