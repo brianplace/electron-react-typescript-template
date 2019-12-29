@@ -6,7 +6,8 @@
     "start": "npm run build && electron .",
     "dev": "webpack -d --watch",
     "build": "webpack --env production",
-    "postinstall": "ncu -u && npm update && node packageCleanup.js"
+    "postinstall": "ncu -u && npm update && node packageCleanup.js",
+    "package": "electron-packager . deployed-app"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
@@ -24,6 +25,7 @@
     "devtron": "^1.4.0",
     "electron": "^7.1.5",
     "electron-debug": "^3.0.1",
+    "electron-packager": "^14.1.1",
     "npm-check-updates": "^4.0.1",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",

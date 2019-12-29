@@ -13,8 +13,7 @@ function createWindow() {
         }
     });
     
-    // mainWindow.loadURL(path.join('file://', __dirname, '../index.html'));
-    mainWindow.loadURL(`file://${path.join(__dirname, '../index.html')}`);
+    newWindow.loadFile('index.html');
 
     mainWindow.on('closed', () => {
         mainWindow = null;
