@@ -13,7 +13,7 @@ function createWindow() {
         }
     });
     
-    newWindow.loadFile('index.html');
+    mainWindow.loadFile('index.html');
 
     mainWindow.on('closed', () => {
         mainWindow = null;
